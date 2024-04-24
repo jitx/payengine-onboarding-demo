@@ -6,5 +6,6 @@ WORKDIR /server
 COPY package.json .
 COPY package-lock.json .
 RUN npm install
-COPY . .
+COPY /database ./database
+COPY index.js  .
 CMD npm run migrate && npm run seed && npm start
